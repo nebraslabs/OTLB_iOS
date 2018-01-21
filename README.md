@@ -17,7 +17,7 @@
 * [Features](#features) ⭐
 * [Installation](#installation) 🔌💡
 * [Firebase new project](#firebase-new-project) 🌍🆕
-* [Link firebase project with your android app](#link-firebase-project-with-your-android-app) 🔄
+* [Link firebase project with your iOS app](#link-firebase-project-with-your-iOS-app) 🔄
 
 </br></br>
 
@@ -124,12 +124,12 @@ https://console.firebase.google.com
 </br></br></br>
 
 #### بهذه الخطوات نكون قد أنشأنا مشروع</br> Firebase بنجاح</br> 
-#### والآن لربط المشروع بتطبيق الاندرويد نقوم باتباع الخطوات التالية: </br> 📱📲
+#### والآن لربط المشروع بتطبيق الايفون نقوم باتباع الخطوات التالية: </br> 📱📲
 
 ## Link firebase project with your iOS app 📱📲
 
 👀 1️⃣ الضغط على Add Firebase to your iOS app </br></br>
-💼 2️⃣ قم بنسخ اسم الباكج من ملف المانيفست بالاندرويد ثم إدخاله في خانة iOS bundle ID </br></br>
+💼 2️⃣ قم بنسخ اسم الباكج ثم إدخاله في خانة iOS bundle ID </br></br>
 📱 3️⃣ الضغط على REGISTER APP </br></br>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/1494436/35197401-e94ee99c-feef-11e7-8ac3-acef4585ba36.png"></p>
