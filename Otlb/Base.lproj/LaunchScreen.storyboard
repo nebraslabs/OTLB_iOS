@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AoR-mF-0rj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Michroma.ttf">
+            <string>Michroma</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="xbe-lm-Bs6">
+            <objects>
+                <viewController id="AoR-mF-0rj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NZC-Fl-z8W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="eIq-Ot-VOQ">
+                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="yzK-fp-gyg"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="MDf-Rq-46y">
+                                <rect key="frame" x="149.5" y="262" width="76" height="76"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTLB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zga-j2-LO4">
+                                <rect key="frame" x="154" y="346" width="66.5" height="24.5"/>
+                                <fontDescription key="fontDescription" name="Michroma" family="Michroma" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0044736894780000001" green="0.21729356050000001" blue="0.33781313899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MDf-Rq-46y" firstAttribute="centerX" secondItem="NZC-Fl-z8W" secondAttribute="centerX" id="DJk-gg-EDG"/>
+                            <constraint firstItem="MDf-Rq-46y" firstAttribute="centerY" secondItem="NZC-Fl-z8W" secondAttribute="centerY" multiplier="0.9" id="Pla-fs-twO"/>
+                            <constraint firstItem="Zga-j2-LO4" firstAttribute="top" secondItem="MDf-Rq-46y" secondAttribute="bottom" constant="8" id="Z2m-s8-Emk"/>
+                            <constraint firstItem="eIq-Ot-VOQ" firstAttribute="leading" secondItem="4Je-0H-qwX" secondAttribute="leading" id="bjZ-70-f3L"/>
+                            <constraint firstItem="eIq-Ot-VOQ" firstAttribute="bottom" secondItem="4Je-0H-qwX" secondAttribute="bottom" id="cJv-5H-fV7"/>
+                            <constraint firstItem="4Je-0H-qwX" firstAttribute="trailing" secondItem="eIq-Ot-VOQ" secondAttribute="trailing" id="dLe-y1-lEA"/>
+                            <constraint firstItem="Zga-j2-LO4" firstAttribute="centerX" secondItem="NZC-Fl-z8W" secondAttribute="centerX" id="fRw-MF-UVl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Je-0H-qwX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Juj-AJ-o74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="158" height="159"/>
+        <image name="logo" width="76" height="76"/>
+    </resources>
+</document>
