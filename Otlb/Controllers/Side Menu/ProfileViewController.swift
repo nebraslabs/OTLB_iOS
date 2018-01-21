@@ -105,6 +105,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             // Upload the file to the path "images/rivers.jpg"
             let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    Utilities.alert(title: "Error", message: error?.localizedDescription ?? "An error occured")
                     // Uh-oh, an error occurred!
                     return
                 }
