@@ -17,7 +17,7 @@
 * [Features](#features) ⭐
 * [Installation](#installation) 🔌💡
 * [Firebase new project](#firebase-new-project) 🌍🆕
-* [Link firebase project with your iOS app](#link-firebase-project-with-your-iOS-app) 🔄
+* [Link firebase project with your iOS app](#link-firebase-project-with-your-ios-app-) 🔄
 
 </br></br>
 
