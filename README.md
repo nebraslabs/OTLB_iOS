@@ -166,6 +166,12 @@ Xcode
 <img src="https://user-images.githubusercontent.com/1494436/35197539-8b5df1a0-fef1-11e7-8fe5-824b9f7607ad.png">
 </p>
 
+قم بهذه الخطوة لاعطاء الصلاحيات لـ GeoFire</br>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/1494436/35218444-ba0923c4-ff7f-11e7-84ab-12ee1f3a80d4.png">
+</p>
+
 <p align="center">
 <img src="https://www.weheartswift.com/wp-content/uploads/2016/11/xcode-logo-small.png">
 </p>
