@@ -13,8 +13,7 @@ import ObjectMapper
 import Firebase
 
 class Constants: NSObject {
-    static let baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?"
-    static let directionsURL = "http://maps.googleapis.com/maps/api/directions/json?origin="
+    static let directionsURL = "https://maps.googleapis.com/maps/api/directions/json?origin="
     static var API_KEY = ""
     static var SERVER_KEY = ""
     static var APP_NAME = ""

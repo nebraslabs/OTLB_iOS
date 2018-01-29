@@ -162,7 +162,7 @@ class CustomerViewController: UIViewController, GMSPlacePickerViewControllerDele
     @IBAction func makeRequest(_ sender: UIButton) {
         let userID = Auth.auth().currentUser!.uid
         let requestFire = GeoFire(firebaseRef: DB.child("customerRequest"))
-        requestFire?.setLocation(CLLocation(latitude: pickView.coordinate.latitude, longitude: pickView.coordinate.longitude), forKey: userID)
+        requestFire.setLocation(CLLocation(latitude: pickView.coordinate.latitude, longitude: pickView.coordinate.longitude), forKey: userID)
         
         requestUI()
         getNearbyDrivers()
@@ -187,9 +187,9 @@ class CustomerViewController: UIViewController, GMSPlacePickerViewControllerDele
         nearbyQuery?.removeAllObservers()
         let geoFire = GeoFire(firebaseRef: DB.child("driversAvailable"))
         let center = CLLocation(latitude: pickView.coordinate.latitude, longitude: pickView.coordinate.longitude)
-        nearbyQuery = geoFire?.query(at: center, withRadius: 10)
+        nearbyQuery = geoFire.query(at: center, withRadius: 10)
         nearbyQuery?.observe(.keyEntered, with: { (key, location) in
-            guard let driverID = key, !self.driversQueue.cancelled.contains(driverID) else { return }
+            guard let driverID = key as String?, !self.driversQueue.cancelled.contains(driverID) else { return }
             self.getNextDriver(driverID)
         })
     }
@@ -432,7 +432,7 @@ extension CustomerViewController {
     }
     
     func drawPath() {
-        let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=\(pickView.coordinate.latitude),\(pickView.coordinate.longitude)&destination=\(dropView.coordinate.latitude),\(dropView.coordinate.longitude)"
+        let urlString = "\(Constants.directionsURL)\(pickView.coordinate.latitude),\(pickView.coordinate.longitude)&destination=\(dropView.coordinate.latitude),\(dropView.coordinate.longitude)"
         let url = URL(string: urlString)
         URLSession.shared.dataTask(with: url!, completionHandler: {
             (data, response, error) in

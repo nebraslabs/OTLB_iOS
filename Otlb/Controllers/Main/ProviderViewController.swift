@@ -121,7 +121,7 @@ class ProviderViewController: UIViewController {
     
     func updateDriverLocation(_ complete:@escaping () -> Void) {
         let geoFire = GeoFire(firebaseRef: DB.child(isWorking ? "driversWorking" : "driversAvailable"))
-        geoFire?.setLocation(CLLocation(latitude: myLocation.coordinate.latitude, longitude: myLocation.coordinate.longitude), forKey: userID, withCompletionBlock: { (error) in
+        geoFire.setLocation(CLLocation(latitude: myLocation.coordinate.latitude, longitude: myLocation.coordinate.longitude), forKey: userID, withCompletionBlock: { (error) in
             if error != nil {
                 Utilities.alert(title: "خطأ", message: "لا يمكن تحديد موقعك")
             } else {
@@ -303,7 +303,7 @@ class ProviderViewController: UIViewController {
                     "rating": 0,
                     "service": "\(request.service ?? 1)",
                     "status": request.status ?? "accepted",
-                    "timestamp": Date().timeIntervalSince1970
+                    "timestamp": ceil(Date().timeIntervalSince1970)
                     ]
                 DB.child("history").child(historyRef.key).setValue(history)
             }
@@ -360,7 +360,7 @@ extension ProviderViewController: GMSMapViewDelegate {
             if snapshot.exists(), let value = snapshot.value as? NSDictionary, let request = Mapper<Request>().map(JSONObject: value),
                 let pickupLat = request.pickupLat, let pickupLng = request.pickupLng,
                 let destinationLat = request.destinationLat, let destinationLng = request.destinationLng {
-                let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=\(pickupLat),\(pickupLng)&destination=\(destinationLat),\(destinationLng)&language=ar"
+                let urlString = "\(Constants.directionsURL)\(pickupLat),\(pickupLng)&destination=\(destinationLat),\(destinationLng)&language=ar"
                 let url = URL(string: urlString)
                 URLSession.shared.dataTask(with: url!, completionHandler: {
                     (data, response, error) in
@@ -408,7 +408,7 @@ extension ProviderViewController: GMSMapViewDelegate {
             if snapshot.exists(), let value = snapshot.value as? NSDictionary, let request = Mapper<Request>().map(JSONObject: value),
                 let lat = request.pickupLat, let lng = request.pickupLng {
                 let geoFire = GeoFire(firebaseRef: DB.child("driversWorking"))
-                geoFire?.getLocationForKey(self.userID, withCallback: { (location, error) in
+                geoFire.getLocationForKey(self.userID, withCallback: { (location, error) in
                     if let location = location {
 
                         Customers.child(value["customerRideId"] as! String).observe(.value, with: { (snapshot) in
@@ -417,7 +417,7 @@ extension ProviderViewController: GMSMapViewDelegate {
                             }
                         })
 
-                        let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=\(lat),\(lng)&destination=\(location.coordinate.latitude),\(location.coordinate.longitude)&language=ar"
+                        let urlString = "\(Constants.directionsURL)\(lat),\(lng)&destination=\(location.coordinate.latitude),\(location.coordinate.longitude)&language=ar"
                         let url = URL(string: urlString)
                         URLSession.shared.dataTask(with: url!, completionHandler: {
                             (data, response, error) in
